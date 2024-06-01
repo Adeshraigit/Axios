@@ -3,7 +3,6 @@ import React from 'react'
 function Card({name,image,folower,profile,url}) {
   return (
     <>
-    <div className='m-10'>
     <div className='grid grid-cols-4 gap-10 w-[50vw] rounded-xl border-2 border-slate-800 bg-slate-700 text-slate-200'>
         <div className='col-span-2'>
           <a href={url} target='_blank' >
@@ -21,7 +20,6 @@ function Card({name,image,folower,profile,url}) {
         <h2 className='text-xl text-left m-4'>Followers: {folower}</h2>
          </div>       
         </div>
-    </div>
     </div>
     </>
   )

@@ -19,24 +19,30 @@ function App() {
   return (
    <>
    {isError != "" && <h2 className='text-slate-200'>{isError}</h2>}
-    <div className='  ml-[25%]  w-[50vw]'>
-      <div className=''>
-      <input 
+    <div className='grid  w-full border-2 h-[100vh] '>
+      <div className='border-2 grid grid-cols-6 w-[50vw]'>
+        <div className='col-span-5'>
+        <input 
       type="text"
       placeholder='Enter UserName'
       value={profile}
       onChange={change}
-      className={`w-[30vw] h-10 border-2 rounded-3xl  border-black m-10 mr-0 p-4 bg-slate-600 text-slate-200`}
+      className={`w-full h-14 border-2 rounded-3xl  border-black  bg-slate-600 text-slate-200`}
       />
-      <button 
-      className={`hover:bg-slate-500 hover:border-slate-800 w-[10vw] rounded-3xl border-2 h-10 m-3 ml-1 p-1  border-black text-slate-200 text-xl bg-slate-600`}
+        </div>
+        <div className='col-span-1'>
+        <button 
+      className={`w-full h-14 hover:bg-slate-500 hover:border-slate-800 rounded-3xl border-2   border-black text-slate-200 text-xl bg-slate-600`}
       onClick={getUser}>
         Search
       </button>
+        </div>
       </div>
-      { display == true &&  <div>
+      <div className=''>
+      { display == true && 
       <Card name={myData.name} folower={myData.followers} image={myData.avatar_url} profile={profile} url={myData.html_url}/>
-      </div>}
+      }
+    </div>
     </div>
     </>
   )
