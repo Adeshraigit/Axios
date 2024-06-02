@@ -23,12 +23,14 @@ function NewsBoard({category}) {
 
   return (
     <>
+    <div className=''>
     <div className='grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 place-items-center'>
     {news.map((data,index) => (
          <div className='p-5' key={index}>
             <NewsCard title={data.title} img={data.urlToImage ?  data.urlToImage : newsImg} description={data.description} url={data.url} />
         </div>
     ))}
+    </div>
     </div>
     </>
   )

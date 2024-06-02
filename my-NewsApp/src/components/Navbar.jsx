@@ -1,20 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-function Navbar({setCategory}) {
-    const categories = ["Business","Sports", 'Entertainment', 'General', 'Health', 'Science', 'Technology'];
+const Navbar = ({setCategory}) => {
+  let categories = ["Business","Sports", 'Entertainment', 'General', 'Health', 'Science', 'Technology'];
+    let [open,setOpen]=useState(false);
   return (
-    <>
-    <div className='grid p-5 grid-flow-col bg-slate-700' >
-        <h1 className='text-3xl lg:text-2xl font-bold' >News <span className=' bg-yellow-400 rounded-lg p-1' >App</span></h1>
-        <div className='flex gap-10'>
-            {categories.map((category,key) => (
-              <div key={key} className='text-white text-md xl:text-2xl lg:text-xl cursor-pointer' onClick={() => setCategory(category)}>
-                {category}
-              </div>
-            ))}
-        </div>
+    <div className='shadow-md w-full fixed top-0 left-0'>
+      <div className='lg:flex items-center justify-between bg-[#292929] py-4 lg:px-10 px-7'>
+      <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
+      text-white'> 
+        News
+      </div>
+      
+      <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer lg:hidden text-white'>
+     {!open ? <FaBars/> : <FaTimes/> }
+      </div>
+
+      <ul className={`lg:flex lg:items-center md:pb-0 pb-12 absolute lg:static bg-[#292929] lg:z-auto z-[-1] left-0 w-full lg:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-10 ':'top-[-490px]'}`}>
+        {
+          categories.map((category,index)=>(
+            <li key={index} className='lg:ml-8 text-xl lg:my-0 my-7' onClick={() => setCategory(category)} >
+              <a href="#" className='text-white hover:text-gray-400 duration-500'>{category}</a>
+            </li>
+          ))
+        }
+      </ul>
+      </div>
     </div>
-    </>
   )
 }
 

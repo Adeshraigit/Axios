@@ -4,11 +4,11 @@ import React from 'react'
 function NewsCard({title,img,description,url}) {
   return (
     <>
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-slate-300">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-[#292929]">
   <img className="w-full" src={img} alt=""/>
   <div className="px-6 py-4">
-    <div className="font-bold text-xl mb-2">{title ? title : 'The Coldest Sunset'}</div>
-    <p className="text-gray-700 text-base">
+    <div className="font-bold text-white text-xl mb-2">{title ? title : 'The Coldest Sunset'}</div>
+    <p className="text-[#686868] text-base">
         {description ? description : 
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.'}
     </p>
