@@ -16,10 +16,10 @@ const Navbar = ({setCategory}) => {
      {!open ? <FaBars/> : <FaTimes/> }
       </div>
 
-      <ul className={`lg:flex lg:items-center md:pb-0 pb-12 absolute lg:static bg-[#292929] lg:z-auto z-[-1] left-0 w-full lg:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-10 ':'top-[-490px]'}`}>
+      <ul className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-[#292929] lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-10 ':'top-[-490px]'}`}>
         {
           categories.map((category,index)=>(
-            <li key={index} className='lg:ml-8 text-xl lg:my-0 my-7' onClick={() => setCategory(category)} >
+            <li key={index} className='lg:ml-8 text-xl lg:my-0 my-7' onClick={() => {setCategory(category); setOpen(!open) }} >
               <a href="#" className='text-white hover:text-gray-400 duration-500'>{category}</a>
             </li>
           ))
